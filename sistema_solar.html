@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Solar Maculados</title>
+    <link rel="stylesheet" href="style_sistema.css">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/00/a3/da/00a3da10ec582704a16ecc253b009a78.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Evita a barra de rolagem */
+            color: #ffffff;
+            font-family: monospace;
+        }
+
+        #cursor {
+            position: fixed;
+            width: 10px; 
+            height: 10px; 
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.596);
+            pointer-events: none; /* Ignora eventos de mouse */
+            transform: translate(-50%, -50%); /* Centraliza o cursor */
+            transition: background 0.3s ease; /* Efeito de transição */
+            z-index: 1000; /* Mantém o cursor acima de outros elementos */
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div> <!-- Elemento do cursor neon -->
+    <header class="cabecalho"> 
+        <ul>
+           <li class="dropdown">
+               <a href="#" class="menu">
+                   <img src="imagens/menu1.png" alt="icone menu">
+               </a>
+               <div class="dropdown-menu"> 
+                   <a class="dropdown-item" href="index.html">HOME</a>
+                   <button class="dropdown-item planeta" value="8">SOL</button>
+                   <button class="dropdown-item planeta" value="0">MERCÚRIO</button>
+                   <button class="dropdown-item planeta" value="1">VÊNUS</button>
+                   <button class="dropdown-item planeta" value="2">TERRA</button>
+                   <button class="dropdown-item planeta" value="3">MARTE</button>
+                   <button class="dropdown-item planeta" value="4">JÚPITER</button>
+                   <button class="dropdown-item planeta" value="5">SATURNO</button>
+                   <button class="dropdown-item planeta" value="6">URANO</button>
+                   <button class="dropdown-item planeta" value="7">NETUNO</button>
+               </div>
+           </li>
+        </ul>
+    </header>
+
+    <main class="container">
+        <div class='card' style='background-image: url("https://64.media.tumblr.com/d83ca753ffd2943524c0210f4aa21239/tumblr_nqpz5r2cdm1qbw2q1o1_640.gifv")' >
+            <span class='card-infos'>
+                <span class='infos'>
+                    <h3>Nome:</h3>
+                    <p>Sol</p>
+                </span>
+                <span class='infos'>
+                    <h3>Velocidade rotação:</h3>
+                    <p>~2 km/s</p>
+                </span>
+                <span class='infos'>
+                    <h3>Distância:</h3>
+                    <p>0</p>
+                </span>
+            </span>
+            <span class='descricao'>
+                <h3>Descrição:</h3>
+                <p>O Sol (ou Sol, em latim) é a estrela no centro do nosso sistema solar e é responsável pelo clima e tempo da Terra. Ele é quase uma esfera perfeita, com uma diferença de apenas 10 km no diâmetro entre os polos e o equador. <br>O raio médio do Sol é de 695.508 km, o que é aproximadamente 109,2 vezes o da Terra, sendo que 20 a 25% desse volume corresponde ao núcleo.</p>
+            </span>
+        </div>
+    </main>
+
+    <span id="Cometa" class="planetas">
+        <div class="img-cometa"></div>
+    </span>
+    <span id="Meteoro" class="planetas">
+        <div class="img-meteoro"></div>
+    </span>  
+
+    <script type="module">
+        import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
+
+        neonCursor({
+            el: document.body, // Aplica o efeito ao body da página
+            shaderPoints: 16,
+            curvePoints: 80,
+            curveLerp: 0.5,
+            radius1: 2,
+            radius2: 8,
+            velocityTreshold: 10,
+            sleepRadiusX: 100,
+            sleepRadiusY: 100,
+            sleepTimeCoefX: 0.0025,
+            sleepTimeCoefY: 0.0025
+        });
+
+        // Move o cursor personalizado ao redor da página
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('cursor');
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+
+        // Lógica para mostrar os planetas ao clicar nos itens do menu
+        const planetButtons = document.querySelectorAll('.planeta');
+        planetButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const selectedValue = event.target.value;
+
+                // Aqui você deve adicionar a lógica para exibir os planetas com base no valor selecionado.
+                // Exemplo:
+                const planetas = document.querySelectorAll('.planetas');
+                planetas.forEach(planet => {
+                    planet.style.display = 'none'; // Esconde todos os planetas
+                });
+
+                // Exibir o planeta selecionado
+                const selectedPlanet = document.getElementById(button.textContent.trim());
+                if (selectedPlanet) {
+                    selectedPlanet.style.display = 'block'; // Mostra o planeta selecionado
+                }
+            });
+        });
+    </script>
+    <script src="planetas.js"></script>
+</body>
+</html>

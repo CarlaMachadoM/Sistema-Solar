@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Solar Maculados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/00/a3/da/00a3da10ec582704a16ecc253b009a78.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- Chamada das alterações do cursor -->
+    <div id="cursor" style="position: absolute; width: 60px; height: 60px; background-color: rgb(104, 9, 126); border-radius: 50%; pointer-events: none;"></div>
+
+    <!-- Botão para o menu de informações dos planetas -->
+    <div class="btn-contato"> 
+        <a href="sistema_solar.html">Sistema Solar</a>
+    </div>
+
+    <main>
+        <div class="orbitas"> <!-- Responsável pelo movimento de translação dos planetas -->
+            <span id="sun">
+                <div class="img-sol"></div>
+            </span>
+            <span id="Mercurio" class="planetas">
+                <div class="img-mercurio"></div>
+            </span>
+            <span id="Venus" class="planetas">
+                <div class="img-venus"></div>   
+            </span>
+            <span id="Terra" class="planetas">
+                <div class="orbita-lua">
+                    <div id="lua" class="img-lua">
+                    </div>
+                </div>
+                <div class="img-terra"></div>
+            </span>
+            <span id="Marte" class="planetas">
+                <div class="img-marte"></div>
+            </span>
+            <span id="Jupiter" class="planetas">
+                <div class="img-jupiter"></div>
+            </span>
+            <span id="Saturno" class="planetas">
+                <div class="img-saturno"></div>
+            </span>
+            <span id="Urano" class="planetas">
+                <div class="img-urano"></div>
+            </span>
+            <span id="Netuno" class="planetas">
+                <div class="img-netuno"></div>
+            </span>
+            <span id="Elon" class="planetas">
+                <div class="img-elon"></div>
+            </span>
+            
+            <span id="Cometa" class="planetas">
+                <div class="img-cometa"></div>
+            </span>   
+            <span id="Meteoro" class="planetas">
+                <div class="img-meteoro"></div>
+            </span>  
+        </div>
+    </main>
+    <span class="img-gojo">
+        <img src="https://preview.redd.it/nah-id-win-v0-epcjymbbd3hc1.jpg?width=640&crop=smart&auto=webp&s=7e3054428206f862ddd30d6df0e28752295da965" class="gojo">
+    </span>
+    <!-- Chamada para script de controle de zoom inicial da página e do controle do cursor -->
+    <script src="script.js"></script>
+</body>
+</html>

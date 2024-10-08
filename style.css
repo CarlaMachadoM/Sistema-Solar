@@ -1,0 +1,478 @@
+html {
+    cursor: none; /* Oculta o cursor padrão */
+}
+
+* {
+    cursor: none; /* Oculta o cursor padrão em todos os elementos */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;  
+    background-image: url('https://zeca.astronomos.com.br/sci/estrelas/Orion_2.jpg');
+    cursor: none;
+    pointer-events: none;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    cursor: none;
+    pointer-events: none;
+}
+
+/* Define o caminho da orbita dos planetas */
+.orbitas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 500;
+    position: relative;
+    
+    /* pointer-events: none; */
+}
+
+.planetas{
+    position: absolute;
+    cursor: none;
+    z-index: 1;
+}
+
+/* Define as informações sobre tamanho e movimentação dos planetas */
+#Mercurio{
+    width: 200px;
+    height: 200px;
+    
+    border-radius: 50%;
+    
+    border-left: 2px solid rgb(55, 55, 173);
+    animation: orbita 68.7s linear infinite;
+    cursor: none;
+}
+
+#Venus{
+    width: 280px;
+    height: 280px;
+    border-left: 2px solid rgb(161, 71, 15, 0.594);
+    cursor: none;
+    border-radius: 50%;
+    animation: orbita 48.7s linear infinite;
+}
+
+#Terra {
+    width: 400px;
+    height: 400px;
+    border-left: 2px solid rgb(18, 145, 2, 0.594);
+    border-radius: 50%;
+    animation: orbita 36.5s linear infinite;
+    cursor: none;
+     /* Para conter a órbita da Lua */
+}
+
+
+#Marte{
+    width: 525px;
+    height: 525px;
+    border-left: 2px solid rgb(201, 27, 27, 0.594);
+    border-radius: 50%;
+    animation: orbita 26.5s linear infinite;
+    cursor: none;
+}
+
+#Jupiter{
+    width: 650px;
+    height: 650px;
+    border-left: 2px solid rgb(93, 9, 101, 0.594);
+    border-radius: 50%;
+    animation: orbita 21s linear infinite;
+    cursor: none;
+}
+
+#Saturno{
+    width: 850px;
+    height: 850px;
+    border-left: 2px solid rgb(240, 204, 1, 0.594);
+    border-radius: 50%;
+    animation: orbita 17s linear infinite;
+    cursor: none;
+}
+
+#Urano{
+    width: 1050px;
+    height: 1050px;
+    border-left: 2px solid rgb(159, 160, 161, 0.594);
+    border-radius: 50%;
+    animation: orbita 19s linear infinite;
+    cursor: none;
+}
+
+#Netuno{
+    width: 1150px;
+    height: 1150px;
+    border-left: 2px solid rgb(0, 255, 225,0.594);
+    border-radius: 50%;
+    animation: orbita 15s linear infinite;
+    cursor: none;
+}
+
+#sun{
+    width: 170px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+}
+
+/* Configurações das decorações extras */
+.elon{
+    width: 150px ;
+    height: 150px;
+    margin-left: 180px;
+    margin-top: 170px;
+    border-radius: 100px;
+    opacity: 70%;
+    cursor: none;
+}
+.img-gojo{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+.gojo{
+    width: 150px ;
+    height: 100px;
+    opacity: 30%;
+}
+
+#Cometa{
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    animation: diagonal 7s linear infinite ;
+    cursor: none;
+}
+
+#Meteoro{
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    animation: mover 4s linear infinite ;
+    cursor: none;
+}
+
+.planetas img{
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    cursor: none;
+}
+
+/* Configurações das imagens dos planetas */
+.img-sol{
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    background-image: url("https://64.media.tumblr.com/d83ca753ffd2943524c0210f4aa21239/tumblr_nqpz5r2cdm1qbw2q1o1_640.gifv");
+    background-size: 400px 400px;
+    background-position: center center;
+    position: relative;
+    cursor: none;
+}
+
+.img-mercurio{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url("https://i.seadn.io/gae/RNqgyfqEWDQgV7qMiSX_D74PWAmFa3T0a3HwKwFNht-e_mpdq4QKPGOSbVset8ZzC9z3pzlaTaktRd4-oTBphjM3EwPaWd_Fvt31?auto=format&dpr=1&w=1000");
+    background-size: 70px 70px;
+    background-position: center center;
+    position: relative;
+    left: -6%;
+    top: 50%;
+    cursor: none;
+}
+
+.img-venus{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-image: url("https://i.seadn.io/s/raw/files/3dad20369c1b1d71ec0407ea8b6a1fd4.gif?auto=format&dpr=1&w=1000");
+    background-size: 95px 95px;
+    background-position: center center;
+    position: relative;
+    left: -6%;
+    top: 50%;
+    cursor: none;
+}
+
+.img-terra{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url("https://i.seadn.io/gae/hyEeU0Lr6P22oYEIpQaZh2fOT60kBXcNwLfKIXW0XFkXdK4UkF0kwMGf6xQ5rucVJMnkopxHT_2V-vU0MDbxL0MaG3jIcaDCmhDIiA?auto=format&dpr=1&w=1000");
+    background-size: 120px 120px;
+    background-position: center center;
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    cursor: none;
+    /* animation: orbita 6s linear infinite; */
+}
+.orbita-lua{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: -35px;
+    top: 184px;
+    animation: orbita 6s linear infinite;
+}
+
+.img-lua{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-image: url("https://i.seadn.io/gae/xBzfnHZTF78dus5OoWuv43O1GdMVgf88QbTvyQV4SWSgVIH0c44L4uBfKrAwWsbS7nkARNDAkZlkTUpjb1sThRsx28xhTVU103LPyA?auto=format&dpr=1&w=1000");
+    background-size: 49px 49px;
+    background-position: center center;
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    cursor: none;
+}
+
+.img-marte{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-image: url("https://i.seadn.io/gae/hyh2JKj3DqFQwnhhwi_VdTg6VdcJFG1LijsFm2G9LmkVvMI9EsAYPou2aDlDGFRwXCgH_rLQvjNIGIAj_iCqVhK60DBfLlYSMrOVSPg?auto=format&dpr=1&w=1000");
+    background-size: 80px 80px;
+    background-position: center center;
+    position: relative;
+    left: -3.5%;
+    top: 50%;
+    cursor: none;
+}
+
+.img-jupiter{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-image: url("https://i.seadn.io/gae/DiLOYk4ZYG9uXiJ0izhuFSNoLnzxY6wdoAfbXioifEUQEDQUmjtDIfJf0Mdns-DY1fT5IN2zHTPVyu69qWcq4c4uRpBkjCt48YIr8Q?auto=format&dpr=1&w=1000");
+    background-size: 185px 185px;
+    background-position: center center;
+    position: relative;
+    left: -5%;
+    top: 50%;
+    cursor: none;
+}
+
+.img-saturno{
+    border-radius: 50%;
+    width: 75px;
+    height: 95px;
+    background-image: url("https://i.seadn.io/gae/GWpiotLeOb3PuZsOSPD8HA14sVMc0cqGE83WBIw3lCwgWLEuN0J80MdNm980IiSHTsBV7WR-7wngq7NZINrKoGYDUF0F-WHFh_q6?auto=format&dpr=1&w=1000");
+    background-size: 80px 80px;
+    background-position: center center;
+    position: relative;
+    left: -5%;
+    top: 50%;
+    cursor: none;
+}
+
+.img-urano{
+    border-radius: 50%;
+    width: 53px;
+    height: 53px;
+    background-image: url("https://i.seadn.io/gae/kOInpdIoRs3NquU4L1ATaPNysXnlrKPSACqnDwJqrH6pOM5lgjRRnH4mNc63Q3nYUGY-Xq45-fjceMPv10Om-3bb8Y3mayXiXOLR?auto=format&dpr=1&w=1000");
+    background-size: 155px 155px;
+    background-position: center center;
+    position: relative;
+    left: -3.3%;
+    top: 50%;
+    cursor: none;
+} 
+
+.img-netuno{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-image: url("https://i.seadn.io/gae/Hg3VWuYjCdelVkl5VvPyzDkCkUXvA7ep6pN6C1Jvc-0T-2kPu6YX41bL748cKzIHNuMB3trVWXGywJNOVIhLVTH4RI4S10ExYTDSPQ?auto=format&dpr=1&w=1000");
+    background-size: 125px 125px;
+    background-position: center center;
+    position: relative;
+    left: -30px;
+    top: 50%;
+    cursor: none;
+}
+
+/* Configuração da imagem do cometa */
+.img-cometa{
+    z-index: -3;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDHUemCMyYxufICc7W7X87A8iS-EZLhu3gslvZmrGy82F3H3vGtp3JHmFmYi6XITtn50A&usqp=CAU");
+    background-size: 80px 80px;
+    background-position: center center;
+    position: relative;
+    left: -8%;
+    top: 0%;
+    cursor: none;
+}
+.img-meteoro{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-image: url("https://pa1.aminoapps.com/7160/682daf7eb488552146182d5cb5eafdec237b1877r1-256-256_hq.gif");
+    background-size: 80px 80px;
+    background-position: center center;
+    position: relative;
+    left: -8%;
+    top:30%;
+    cursor: none;
+}
+
+/* Configurações do botão de acesso ao menu de informações dos planetas*/
+.btn-contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 150px;
+    height: 100px;
+    border-radius: 20px;
+    top: 20%; 
+    left: 1%; 
+    background: linear-gradient(135deg, rgba(78, 8, 99, 0.8), rgba(152, 140, 3, 0.4));
+    z-index: 1000; 
+    pointer-events: auto;
+    box-shadow: 0 0 15px rgba(113, 2, 146, 0.8), 0 0 25px rgba(113, 2, 146, 0.5), 0 0 35px rgba(113, 2, 146, 0.3);
+    transition: background 1s ease, transform 0.3s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.btn-contato:hover {
+    background: linear-gradient(135deg, rgba(219, 199, 18, 0.6), rgba(113, 2, 146, 0.6));
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(219, 199, 18, 0.8), 0 0 30px rgba(219, 199, 18, 0.6), 0 0 40px rgba(219, 199, 18, 0.4);
+    transition: background 0.5s ease, transform 0.3s ease, box-shadow 0.5s ease;
+    animation: bouncing 1s;
+}
+
+@keyframes bouncing {
+    0%, 50% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+.btn-contato a {
+    border: 0;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    font-family: monospace;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Animação das orbitas dos planetas */
+@keyframes orbita{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* Animação da Lua orbitando a Terra */
+@keyframes orbita-lua {
+    0% {
+        transform: rotate(0deg) translateX(100px); /* A Lua começa à direita da Terra */
+    }
+    100% {
+        transform: rotate(360deg) translateX(100px); /* A Lua completa a órbita ao redor da Terra */
+    }
+}
+
+/* Animação do cometa */
+@keyframes mover{
+    0%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(350%);
+    }
+}
+
+/* Rastros dos planetas */
+
+/* Alterações de ponteiro do mouse*/
+#cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(104, 9, 126, 0.5); /* Cor roxa translúcida */
+    border-radius: 50%;
+    pointer-events: none; /* Não bloquear cliques */
+    z-index: 9999; /* Colocar acima de todos os elementos */
+    transform: translate(-50%, -50%); /* Centralizar o cursor */
+    animation: pulsate 1.5s infinite; /* Animação de pulsação */
+}
+
+#cursor.hovered {
+    transform: scale(1.5);
+    animation: animateBlob 3s infinite linear;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5); /* Efeito de crescimento */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% {
+        border-radius: 72% 28% 30% 70% / 30% 28% 72% 70%;
+    }
+    50% {
+        border-radius: 53% 47% 31% 69% / 48% 70% 30% 52%;
+    }
+    75% {
+        border-radius: 42% 58% 68% 32% / 68% 52% 48% 32%;
+    }
+}
+
+@keyframes diagonal {
+
+	0% {
+		transform: translate(-50%, -50%);
+	}
+
+	100% {
+		transform: translate(150%, 150%);
+	}
+
+}
